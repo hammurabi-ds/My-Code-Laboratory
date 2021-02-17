@@ -1,15 +1,7 @@
-FROM jupyter/scipy-notebook:17aba6048f44
+FROM continuumio/miniconda3 
 
-# Installint R kernel
+RUN conda install -y -c conda-forge bash jupyter jupyter_contrib_nbextensions
+RUN conda install -y -c conda-forge xeus-cling xtensor
 
-# Installing Julia kernel
-
-# Haskel
-
-# Java
-
-# Go lang
-
-# Lua
-
+CMD ["jupyter", "notebook", "--port=8888", "--no-browser", "--ip=0.0.0.0", "--allow-root"]
 
