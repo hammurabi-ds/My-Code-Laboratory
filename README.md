@@ -1,6 +1,8 @@
 # MCLAB
 My Code Laboratory
 
-docker build -t mclab .
+Build the image
+```docker build -t lab:1.0 .```
 
-docker run -d -p 8888:8888 --name judo mclab:latest
+Run the container
+```docker run -d --restart always -p 8888:8888 --name workspace lab:1.0```

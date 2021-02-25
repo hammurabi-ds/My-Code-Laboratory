@@ -1,9 +1,10 @@
 FROM jupyter/datascience-notebook
 USER root
 
-# install miniconda
 RUN apt-get update && apt-get install -y curl 
-RUN apt install build-essential
+
+# install xeus-cling
+RUN conda install xeus-cling -c conda-forge
 
 WORKDIR /home/jovyan/work
 
