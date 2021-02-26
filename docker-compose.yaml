@@ -6,17 +6,34 @@ services:
     image: hamurabi/lab-workspace:1.0
     restart: always
     container_name: "workspace-jupyter"
-    volumes:
-      - .:/data
     ports:
        - "8888:8888"
-
   # Setup rstudio workspace     
   workspace_rstudio:
      image: rocker/rstudio
      restart: always
      container_name: "workspace-rstudio"
-     volumes:
-       - .:/data
+     environment:
+       - USER=rstudio
+       - PASSWORD=rstudio
      ports:
        - "8787:8787"
+  # Setup local mysql db
+  mysql:
+     image: mysql:5.7
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: admin
+       MYSQL_DATABASE: LICENCE
+       MYSQL_USER: admin
+       MYSQL_PASSWORD: admin
+     container_name: "database-mysql"
+     ports:
+       - "6234:5432"
+  # Setup grafana
+  grafana:
+     image: grafana/grafana:6.5.0
+     restart: always
+     container_name: "dashboard-grafana"
+     ports:
+       - "3000:3000"
