@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  # Setup jupyter workspace
+  workspace:
+    image: hamurabi/lab-workspace:1.0
+    restart: always
+    container_name: "workspace-jupyter"
+    volumes:
+      - .:/data
+    ports:
+       - "8888:8888"
+
+  # Setup rstudio workspace     
+  workspace_rstudio:
+     image: rocker/rstudio
+     restart: always
+     container_name: "workspace-rstudio"
+     volumes:
+       - .:/data
+     ports:
+       - "8787:8787"
