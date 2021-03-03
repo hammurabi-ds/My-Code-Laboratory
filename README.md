@@ -1,4 +1,4 @@
-# My Code Labs
+# My Code Laboratory
 
 These tools allows you to quickly setup a general containerized data science environment that is independent from you OS, with useful tools at hand . The yaml file spins up the following contianers:
 
