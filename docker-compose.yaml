@@ -7,7 +7,7 @@ services:
     restart: always
     container_name: "workspace-jupyter"
     environment:
-       - JUPYTER_TOKEN=easy
+       - JUPYTER_TOKEN=jupyter
     ports:
        - "8888:8888"
   # Setup rstudio workspace     
@@ -26,7 +26,7 @@ services:
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: admin
-       MYSQL_DATABASE: LICENCE
+       MYSQL_DATABASE: DB
        MYSQL_USER: admin
        MYSQL_PASSWORD: admin
      container_name: "database-mysql"
