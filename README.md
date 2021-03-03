@@ -17,6 +17,14 @@ These tools allows you to quickly setup a general containerized data science env
 
 ```docker-compose up -d```
 
+The different tools can be reached at
+
+ - **JupyterLab**: 127.0.0.1:8888
+ - **Rstudio**: 127.0.0.1:8787
+ - **Grafana**: 127.0.0.1:3000
+
+
+
 # Usage tips
 
 1. Store the links in your browser or create shortcuts
